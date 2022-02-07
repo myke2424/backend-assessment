@@ -1,6 +1,6 @@
-from marshmallow import Schema, fields, post_load, validate, pre_load
-from errors import QueryParamMissingError
+from marshmallow import Schema, fields, post_load, pre_load, validate
 
+from errors import QueryParamMissingError
 from models import Post
 
 
@@ -26,7 +26,7 @@ class BlogPostsRequestQueryParams(Schema):
 
     @pre_load
     def validate_tags(self, data, **kwargs) -> None:
-        if data.get('tags') is None:
+        if data.get("tags") is None:
             raise QueryParamMissingError("Tags parameter is required")
 
 

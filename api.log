@@ -864,3 +864,86 @@ errors.QueryParamMissingError: Tags parameter is required
 2022-02-06 21:15:34,350 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\app.py', reloading
 2022-02-06 21:15:34,378 INFO  * Restarting with stat
 2022-02-06 21:15:35,913 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:18:46,872 INFO  * Restarting with stat
+2022-02-06 21:18:48,492 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:18:49,107 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 100, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:18:49,109 INFO 127.0.0.1 - - [06/Feb/2022 21:18:49] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:18:52,463 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:18:52,741 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:18:52,744 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:18:52,908 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:18:52,910 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:18:52,911 INFO 127.0.0.1 - - [06/Feb/2022 21:18:52] "GET /api/posts?tags=science,tech HTTP/1.1" 200 -
+2022-02-06 21:19:06,514 INFO 127.0.0.1 - - [06/Feb/2022 21:19:06] "GET /api/posts?tags=science,tech&direction=desc HTTP/1.1" 200 -
+2022-02-06 21:19:08,681 INFO 127.0.0.1 - - [06/Feb/2022 21:19:08] "GET /api/posts?tags=science,tech&direction=desc HTTP/1.1" 200 -
+2022-02-06 21:19:13,854 INFO 127.0.0.1 - - [06/Feb/2022 21:19:13] "GET /api/posts?tags=science,tech&direction=desc HTTP/1.1" 200 -
+2022-02-06 21:19:22,841 INFO 127.0.0.1 - - [06/Feb/2022 21:19:22] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:19:26,619 INFO 127.0.0.1 - - [06/Feb/2022 21:19:26] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:19:52,574 INFO 127.0.0.1 - - [06/Feb/2022 21:19:52] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:19:53,078 INFO 127.0.0.1 - - [06/Feb/2022 21:19:53] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:21:19,638 INFO 127.0.0.1 - - [06/Feb/2022 21:21:19] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:21:20,387 INFO 127.0.0.1 - - [06/Feb/2022 21:21:20] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:21:22,369 INFO 127.0.0.1 - - [06/Feb/2022 21:21:22] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:21:22,640 INFO 127.0.0.1 - - [06/Feb/2022 21:21:22] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:21:22,799 INFO 127.0.0.1 - - [06/Feb/2022 21:21:22] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:21:22,961 INFO 127.0.0.1 - - [06/Feb/2022 21:21:22] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:21:23,519 INFO 127.0.0.1 - - [06/Feb/2022 21:21:23] "GET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1" 200 -
+2022-02-06 21:22:18,037 INFO  * Restarting with stat
+2022-02-06 21:22:19,639 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:22:20,895 DEBUG ImmutableMultiDict([('tags', 'science,tech'), ('sortBy', 'authorId')])
+2022-02-06 21:22:20,897 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:22:21,053 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:22:21,056 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:22:21,217 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:22:21,219 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:22:21,227 INFO 127.0.0.1 - - [06/Feb/2022 21:22:21] "[35m[1mGET /api/posts?tags=science,tech&sortBy=authorId HTTP/1.1[0m" 500 -
+2022-02-06 21:22:21,282 INFO 127.0.0.1 - - [06/Feb/2022 21:22:21] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:22:21,282 INFO 127.0.0.1 - - [06/Feb/2022 21:22:21] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:22:21,288 INFO 127.0.0.1 - - [06/Feb/2022 21:22:21] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:22:21,290 INFO 127.0.0.1 - - [06/Feb/2022 21:22:21] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:22:21,307 INFO 127.0.0.1 - - [06/Feb/2022 21:22:21] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:22:47,177 DEBUG ImmutableMultiDict([('tags', 'science,tech'), ('sortBy', 'author_id')])
+2022-02-06 21:22:47,178 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:22:47,321 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:22:47,326 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:22:47,479 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:22:47,482 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:22:47,482 INFO 127.0.0.1 - - [06/Feb/2022 21:22:47] "GET /api/posts?tags=science,tech&sortBy=author_id HTTP/1.1" 200 -
+2022-02-06 21:24:24,720 INFO 127.0.0.1 - - [06/Feb/2022 21:24:24] "GET /api/posts?tags=science,tech HTTP/1.1" 200 -
+2022-02-06 21:24:35,986 INFO 127.0.0.1 - - [06/Feb/2022 21:24:35] "GET /api/posts?tags=science,tech&sortBy=likes HTTP/1.1" 200 -
+2022-02-06 21:24:37,890 INFO 127.0.0.1 - - [06/Feb/2022 21:24:37] "GET /api/posts?tags=science,tech&sortBy=likes HTTP/1.1" 200 -
+2022-02-06 21:24:38,782 INFO 127.0.0.1 - - [06/Feb/2022 21:24:38] "GET /api/posts?tags=science,tech&sortBy=likes HTTP/1.1" 200 -
+2022-02-06 21:24:39,220 INFO 127.0.0.1 - - [06/Feb/2022 21:24:39] "GET /api/posts?tags=science,tech&sortBy=likes HTTP/1.1" 200 -
+2022-02-06 21:24:39,394 INFO 127.0.0.1 - - [06/Feb/2022 21:24:39] "GET /api/posts?tags=science,tech&sortBy=likes HTTP/1.1" 200 -
+2022-02-06 21:24:51,809 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\app.py', reloading
+2022-02-06 21:24:51,839 INFO  * Restarting with stat
+2022-02-06 21:24:53,464 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:24:57,749 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:24:57,915 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:24:57,918 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:24:58,079 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:24:58,081 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:24:58,082 INFO 127.0.0.1 - - [06/Feb/2022 21:24:58] "GET /api/posts?tags=science,tech&sortBy=likes HTTP/1.1" 200 -
+2022-02-06 21:26:43,214 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\controllers.py', reloading
+2022-02-06 21:26:43,243 INFO  * Restarting with stat
+2022-02-06 21:26:44,876 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:58:20,232 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\posts.py', reloading
+2022-02-06 21:58:20,262 INFO  * Restarting with stat
+2022-02-06 21:58:23,086 INFO  * Restarting with stat
+2022-02-06 21:58:30,210 INFO  * Restarting with stat
