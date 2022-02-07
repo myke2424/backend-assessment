@@ -10,4 +10,4 @@ class BaseError(Exception):
 class QueryParamMissingError(BaseError):
     """Exception raised when the query string is missing a required parameter"""
 
-    http_code: HTTPStatus = HTTPStatus.BAD_REQUEST
+    http_code = HTTPStatus.BAD_REQUEST

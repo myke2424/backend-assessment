@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from typing import List
 
 
-@dataclass(frozen=True, order=True)
-class Post:
+@dataclass(frozen=True)
+class BlogPost:
     id: int
     author: str
     author_id: int

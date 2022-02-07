@@ -1,7 +1,7 @@
 from marshmallow import Schema, fields, post_load, pre_load, validate
 
-from errors import QueryParamMissingError
-from models import Post
+from .errors import QueryParamMissingError
+from .models import BlogPost
 
 
 class BlogPostSchema(Schema):
@@ -14,9 +14,9 @@ class BlogPostSchema(Schema):
     tags = fields.List(fields.Str())
 
     @post_load
-    def make_post(self, data: dict, **kwargs) -> Post:
+    def make_post(self, data: dict, **kwargs) -> BlogPost:
         """Create the post object"""
-        return Post(**data)
+        return BlogPost(**data)
 
 
 class BlogPostsRequestQueryParams(Schema):
@@ -26,6 +26,7 @@ class BlogPostsRequestQueryParams(Schema):
 
     @pre_load
     def validate_tags(self, data, **kwargs) -> None:
+        """Validate if tags are in query params"""
         if data.get("tags") is None:
             raise QueryParamMissingError("Tags parameter is required")
 
