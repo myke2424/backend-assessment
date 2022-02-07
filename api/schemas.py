@@ -1,6 +1,7 @@
-from marshmallow import Schema, fields, post_load, pre_load, validate
+from marshmallow import Schema, fields, post_load, pre_load
 
-from .errors import QueryParamMissingError
+from .errors import (InvalidDirectionParameterError,
+                     InvalidSortByParameterError, QueryParamMissingError)
 from .models import BlogPost
 
 
@@ -20,15 +21,25 @@ class BlogPostSchema(Schema):
 
 
 class BlogPostsRequestQueryParams(Schema):
-    tags: fields.Str()
-    sort_by: fields.Str(validate=validate.OneOf(["id", "reads", "likes", "popularity"]), missing="id")
-    direction: fields.Str(validate=validate.OneOf(["asc", "desc"]), missing="asc")
+    tags = fields.Str()
+    sort_by = fields.Str(missing="id")
+    direction = fields.Str(missing="asc")
 
     @pre_load
-    def validate_tags(self, data, **kwargs) -> None:
-        """Validate if tags are in query params"""
+    def _validate_params(self, data, **kwargs) -> None:
+        """Validate query parameters"""
         if data.get("tags") is None:
-            raise QueryParamMissingError("Tags parameter is required")
+            raise QueryParamMissingError("tags parameter is required")
+
+        if data.get("sort_by") not in ("id", "reads", "likes", "popularity"):
+            raise InvalidSortByParameterError(
+                "sortBy parameter is invalid - must be one of the following: (id,reads, likes, popularity)"
+            )
+
+        if data.get("direction") not in ("asc", "desc"):
+            raise InvalidDirectionParameterError(
+                "direction parameter is invalid - must be of the following: (asc, desc)"
+            )
 
 
 blog_post_schema = BlogPostSchema()

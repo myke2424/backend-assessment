@@ -1,5 +1,5 @@
 import logging
-
+from http import HTTPStatus
 from flask import Blueprint, request
 
 from .decorators import http_error_handler
@@ -23,7 +23,7 @@ def ping():
 @http_error_handler
 def blog_posts():
     """
-    GET a list of blog posts via the hatchway API queried by the tags' parameter.
+    Get a list of blog posts via the hatchway API.
 
     Query Parameters:
         tags: str - Required
@@ -33,19 +33,18 @@ def blog_posts():
         direction: Optional[str] - Default='asc'
             The direction for sorting. The acceptable fields are (desc, asc).
 
-    Returns:
-
+    Returns: JSON response of blog posts
     """
+
     query_params = request.args
 
     tags = query_params.get("tags")
     sort_by = query_params.get("sortBy", "id")
     direction = query_params.get("direction", "asc")
 
-    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, "direction": direction})
     tags = tags.split(",")  # parse comma seperated list of tags into a list
-    posts = get_unique_blog_posts_for_all_tags(tags)
-    sort_blog_posts(posts=posts, direction=direction, sort_by=sort_by)
+    posts = sort_blog_posts(posts=get_unique_blog_posts_for_all_tags(tags), direction=direction, sort_by=sort_by)
 
-    response = serialize_blog_posts_to_json(posts), 200
+    response = serialize_blog_posts_to_json(posts), HTTPStatus.OK
     return response

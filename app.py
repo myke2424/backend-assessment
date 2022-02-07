@@ -14,13 +14,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 logger.setLevel(Config.LOG_LEVEL)
 
-
-def run_app() -> None:
-    app = Flask(__name__)
-    app.config.from_object(Config)
-    app.register_blueprint(posts_api, url_prefix="/api")
-    app.run(host=Config.HOST, port=Config.PORT)
-
+app = Flask(__name__)
+app.config.from_object(Config)
+app.register_blueprint(posts_api, url_prefix="/api")
 
 if __name__ == "__main__":
-    run_app()
+    app.run(host='0.0.0.0', port=Config.PORT)

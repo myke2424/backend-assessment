@@ -2,12 +2,12 @@
 
 import concurrent.futures
 import logging
+#from functools import cache
 from typing import List
 
 import requests
-
 from config import Config
-from functools import cache
+
 from .models import BlogPost
 from .schemas import blog_post_schema
 
@@ -15,15 +15,15 @@ logger = logging.getLogger(__name__)
 _GET_POST_URL = Config.HATCH_API_BLOG_POSTS_URL
 
 
-@cache
+#@cache
 def _get_blog_posts_with_tag_json(tag: str) -> List[dict]:
-    """ Get JSON response from GET request to blog posts api with the tag query param """
+    """Get JSON response from GET request to blog posts api with the tag query param"""
     response = requests.get(_GET_POST_URL, params={"tag": tag}).json()
     return response
 
 
 def _get_blog_posts_with_tag(tag: str) -> List[dict]:
-    """ Fetch all blog posts that the given tag """
+    """Fetch all blog posts that the given tag"""
     posts = []
     posts_json = _get_blog_posts_with_tag_json(tag)
 
@@ -45,11 +45,10 @@ def _get_blog_posts_for_all_tags(tags: List[str]) -> List[BlogPost]:
 
 
 def _get_blog_posts_for_all_tags(tags: List[str]) -> List[BlogPost]:
-    """ Using a thread-pool, fetch all blog posts in parallel for each tag in the list of tags. """
+    """Using a thread-pool, fetch all blog posts in parallel for each tag in the list of tags."""
     all_posts = []
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        future_to_url = (executor.submit(_get_blog_posts_with_tag, tag) for
-                         tag in tags)
+        future_to_url = (executor.submit(_get_blog_posts_with_tag, tag) for tag in tags)
         for future in concurrent.futures.as_completed(future_to_url):
             posts = future.result()
             for post in posts:
@@ -58,7 +57,7 @@ def _get_blog_posts_for_all_tags(tags: List[str]) -> List[BlogPost]:
 
 
 def _remove_duplicate_blog_posts(posts: List[BlogPost]) -> List[BlogPost]:
-    """ Remove all duplicate blog posts from a given list of blog posts """
+    """Remove all duplicate blog posts from a given list of blog posts"""
     post_ids = set()
     unique_posts = []
     for post in posts:
@@ -69,7 +68,7 @@ def _remove_duplicate_blog_posts(posts: List[BlogPost]) -> List[BlogPost]:
 
 
 def get_unique_blog_posts_for_all_tags(tags: List[str]) -> List[BlogPost]:
-    """ Fetch all unique blog posts for each given tag (duplicate posts will be removed) """
+    """Fetch all unique blog posts for each given tag (duplicate posts will be removed)"""
     posts = _get_blog_posts_for_all_tags(tags)
     unique_posts = _remove_duplicate_blog_posts(posts)
     logger.debug(f"Number of unique posts: {len(unique_posts)} for tags: {tags}")
@@ -77,7 +76,7 @@ def get_unique_blog_posts_for_all_tags(tags: List[str]) -> List[BlogPost]:
 
 
 def sort_blog_posts(posts: List[BlogPost], direction: str, sort_by: str) -> List[BlogPost]:
-    """ Sort the blog posts by a given key (sort_by) and direction ('asc' or 'desc') """
+    """Sort the blog posts by a given key (sort_by) and direction ('asc' or 'desc')"""
     is_reverse = True if direction == "desc" else False
     return sorted(posts, key=lambda p: getattr(p, sort_by), reverse=is_reverse)
 
