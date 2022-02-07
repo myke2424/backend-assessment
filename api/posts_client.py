@@ -2,7 +2,7 @@
 
 import concurrent.futures
 import logging
-#from functools import cache
+from functools import cache
 from typing import List
 
 import requests
@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 _GET_POST_URL = Config.HATCH_API_BLOG_POSTS_URL
 
 
-#@cache
+@cache
 def _get_blog_posts_with_tag_json(tag: str) -> List[dict]:
     """Get JSON response from GET request to blog posts api with the tag query param"""
     response = requests.get(_GET_POST_URL, params={"tag": tag}).json()
