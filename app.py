@@ -10,7 +10,7 @@ from config import Config
 from decorators import http_error_handler
 from errors import QueryParamMissingError
 from models import Post
-from schemas import blog_post_schema
+from schemas import blog_post_schema, blog_posts_request_query_params_schema
 
 app = Flask(__name__)
 
@@ -58,9 +58,9 @@ def _remove_duplicate_posts(posts: List[Post]) -> List[Post]:
     post_ids = set()
     unique_posts = []
     for post in posts:
-        if post.id_ not in post_ids:
+        if post.id not in post_ids:
             unique_posts.append(post)
-        post_ids.add(post.id_)
+        post_ids.add(post.id)
     return unique_posts
 
 
@@ -68,15 +68,9 @@ def serialize_posts_to_json(posts: List[Post]) -> dict:
     return {"posts": [post.to_json() for post in posts]}
 
 
-def sort_posts(posts: dict, direction: str, sort_by: str):
-    order = None
-    if direction == 'desc':
-        order = True
-    elif direction == 'asc':
-        order = False
-    else:
-        raise ValueError
-    return sorted(posts, key=lambda key: key[sort_by], reverse=True)
+def sort_posts(posts: List[Post], direction: str, sort_by: str) -> List[Post]:
+    is_reverse = True if direction == 'desc' else False
+    return sorted(posts, key=lambda p: getattr(p, sort_by), reverse=is_reverse)
 
 
 @app.route("/api/posts", methods=["GET"])
@@ -103,15 +97,12 @@ def blog_posts():
     sort_by = query_params.get("sortBy", "id")
     direction = query_params.get("direction", "asc")
 
-    if tags is None:
-        raise QueryParamMissingError("Tags parameter is required")
-
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
     tags = tags.split(",")  # parse comma seperated list of tags into a list
-    posts = get_blog_posts_for_all_tags(
-        url=Config.HATCH_API_BLOG_POSTS_URL, tags=tags, sort_by=sort_by, direction=direction
-    )
 
-    serialized_posts = serialize_posts_to_json(posts)
-    sort_posts(posts=serialized_posts, direction=direction, sort_by=sort_by)
+    posts = get_blog_posts_for_all_tags(url=Config.HATCH_API_BLOG_POSTS_URL, tags=tags)
+    sorted_posts = sort_posts(posts=posts, direction=direction, sort_by=sort_by)
 
-    return serialized_posts, 200
+    response = serialize_posts_to_json(sorted_posts), 200
+
+    return response

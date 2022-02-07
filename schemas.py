@@ -1,10 +1,11 @@
-from marshmallow import Schema, fields, post_load, validate
+from marshmallow import Schema, fields, post_load, validate, pre_load
+from errors import QueryParamMissingError
 
 from models import Post
 
 
 class BlogPostSchema(Schema):
-    id_ = fields.Int(data_key="id")
+    id = fields.Int()
     author = fields.Str()
     author_id = fields.Int(data_key="authorId")
     likes = fields.Int()
@@ -19,9 +20,14 @@ class BlogPostSchema(Schema):
 
 
 class BlogPostsRequestQueryParams(Schema):
-    tags: fields.Str(required=True)
-    sort_by: fields.Str(validate=validate.OneOf(['id', 'reads', 'likes', 'popularity']), missing='id')
-    direction: fields.Str(validate=validate.OneOf(['asc', 'desc']), missing='asc')
+    tags: fields.Str()
+    sort_by: fields.Str(validate=validate.OneOf(["id", "reads", "likes", "popularity"]), missing="id")
+    direction: fields.Str(validate=validate.OneOf(["asc", "desc"]), missing="asc")
+
+    @pre_load
+    def validate_tags(self, data, **kwargs) -> None:
+        if data.get('tags') is None:
+            raise QueryParamMissingError("Tags parameter is required")
 
 
 blog_post_schema = BlogPostSchema()

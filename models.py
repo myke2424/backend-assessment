@@ -4,7 +4,7 @@ from typing import List
 
 @dataclass(frozen=True, order=True)
 class Post:
-    id_: int
+    id: int
     author: str
     author_id: int
     likes: int
@@ -14,7 +14,7 @@ class Post:
 
     def to_json(self) -> dict:
         return {
-            "id": self.id_,
+            "id": self.id,
             "author": self.author,
             "authorId": self.author_id,
             "likes": self.likes,
@@ -22,4 +22,3 @@ class Post:
             "reads": self.reads,
             "tags": self.tags,
         }
-

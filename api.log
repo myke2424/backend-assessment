@@ -483,3 +483,384 @@ errors.QueryParamMissingError: Tags parameter is required
 2022-02-06 20:47:26,710 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\schemas.py', reloading
 2022-02-06 20:47:26,737 INFO  * Restarting with stat
 2022-02-06 20:47:28,307 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 20:56:35,905 INFO  * Restarting with stat
+2022-02-06 20:56:36,751 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 20:56:36,872 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 107, in blog_posts
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 20:56:36,876 INFO 127.0.0.1 - - [06/Feb/2022 20:56:36] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 20:56:43,457 INFO  * Restarting with stat
+2022-02-06 20:56:44,281 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 20:57:14,908 INFO  * Restarting with stat
+2022-02-06 20:57:15,729 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 20:57:15,992 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 107, in blog_posts
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 20:57:15,995 INFO 127.0.0.1 - - [06/Feb/2022 20:57:15] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 20:57:20,372 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 107, in blog_posts
+    #     raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 20:57:20,373 INFO 127.0.0.1 - - [06/Feb/2022 20:57:20] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 20:57:20,409 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\app.py', reloading
+2022-02-06 20:57:20,446 INFO  * Restarting with stat
+2022-02-06 20:57:22,948 INFO  * Restarting with stat
+2022-02-06 20:57:23,746 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 20:57:36,601 INFO  * Restarting with stat
+2022-02-06 20:57:37,411 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 20:59:54,587 INFO  * Restarting with stat
+2022-02-06 20:59:56,232 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 20:59:56,462 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 107, in blog_posts
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 20:59:56,463 INFO 127.0.0.1 - - [06/Feb/2022 20:59:56] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:00:03,475 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 107, in blog_posts
+    #     raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:00:03,475 INFO 127.0.0.1 - - [06/Feb/2022 21:00:03] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:00:04,401 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\app.py', reloading
+2022-02-06 21:00:04,428 INFO  * Restarting with stat
+2022-02-06 21:00:05,980 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:00:10,217 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:00:10,372 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:00:10,376 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:00:10,523 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:00:10,526 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:00:10,537 INFO 127.0.0.1 - - [06/Feb/2022 21:00:10] "[35m[1mGET /api/posts?tags=science,tech HTTP/1.1[0m" 500 -
+2022-02-06 21:00:10,586 INFO 127.0.0.1 - - [06/Feb/2022 21:00:10] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:00:10,587 INFO 127.0.0.1 - - [06/Feb/2022 21:00:10] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:00:10,592 INFO 127.0.0.1 - - [06/Feb/2022 21:00:10] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:00:10,595 INFO 127.0.0.1 - - [06/Feb/2022 21:00:10] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:00:10,613 INFO 127.0.0.1 - - [06/Feb/2022 21:00:10] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:00:17,307 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 109, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:00:17,309 INFO 127.0.0.1 - - [06/Feb/2022 21:00:17] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:00:56,504 INFO  * Restarting with stat
+2022-02-06 21:00:57,331 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:00:57,869 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 106, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:00:57,873 INFO 127.0.0.1 - - [06/Feb/2022 21:00:57] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:01:02,919 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 106, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:01:02,920 INFO 127.0.0.1 - - [06/Feb/2022 21:01:02] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:01:03,969 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 106, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:01:03,969 INFO 127.0.0.1 - - [06/Feb/2022 21:01:03] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:01:11,124 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 106, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:01:11,125 INFO 127.0.0.1 - - [06/Feb/2022 21:01:11] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:02:06,042 INFO  * Restarting with stat
+2022-02-06 21:02:07,650 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:02:07,799 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 99, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:02:07,800 INFO 127.0.0.1 - - [06/Feb/2022 21:02:07] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:02:10,343 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:02:10,486 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:02:10,490 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:02:10,647 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:02:10,651 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:02:10,652 INFO 127.0.0.1 - - [06/Feb/2022 21:02:10] "GET /api/posts?tags=science,tech HTTP/1.1" 200 -
+2022-02-06 21:02:11,531 INFO 127.0.0.1 - - [06/Feb/2022 21:02:11] "GET /api/posts?tags=science,tech HTTP/1.1" 200 -
+2022-02-06 21:03:23,649 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\app.py', reloading
+2022-02-06 21:03:23,677 INFO  * Restarting with stat
+2022-02-06 21:03:25,224 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:04:12,559 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\app.py', reloading
+2022-02-06 21:04:12,600 INFO  * Restarting with stat
+2022-02-06 21:04:35,902 INFO  * Restarting with stat
+2022-02-06 21:05:08,319 INFO  * Restarting with stat
+2022-02-06 21:05:09,944 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:05:11,669 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 99, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:05:11,671 INFO 127.0.0.1 - - [06/Feb/2022 21:05:11] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:05:12,813 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 99, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:05:12,814 INFO 127.0.0.1 - - [06/Feb/2022 21:05:12] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:05:14,498 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:05:14,641 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:05:14,645 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:05:14,813 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:05:14,816 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:05:14,817 INFO 127.0.0.1 - - [06/Feb/2022 21:05:14] "GET /api/posts?tags=science,tech HTTP/1.1" 200 -
+2022-02-06 21:09:50,104 INFO  * Restarting with stat
+2022-02-06 21:09:51,752 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:09:51,805 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 99, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:09:51,806 INFO 127.0.0.1 - - [06/Feb/2022 21:09:51] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:09:56,723 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:09:56,866 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:09:56,869 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:09:57,028 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:09:57,030 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:09:57,040 INFO 127.0.0.1 - - [06/Feb/2022 21:09:57] "[35m[1mGET /api/posts?tags=science,tech HTTP/1.1[0m" 500 -
+2022-02-06 21:09:57,090 INFO 127.0.0.1 - - [06/Feb/2022 21:09:57] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:09:57,090 INFO 127.0.0.1 - - [06/Feb/2022 21:09:57] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:09:57,096 INFO 127.0.0.1 - - [06/Feb/2022 21:09:57] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:09:57,097 INFO 127.0.0.1 - - [06/Feb/2022 21:09:57] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:11:10,607 INFO  * Restarting with stat
+2022-02-06 21:11:12,181 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:11:12,222 ERROR Tags parameter is required
+Traceback (most recent call last):
+  File "C:\Users\mike\assessment-flask\decorators.py", line 14, in wrapper
+    response = func(*args, **kwargs)
+  File "C:\Users\mike\assessment-flask\app.py", line 99, in blog_posts
+    blog_posts_request_query_params_schema.validate({"tags": tags, "sort_by": sort_by, direction: "direction"})
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 800, in validate
+    self._do_load(data, many=many, partial=partial, postprocess=False)
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 844, in _do_load
+    processed_data = self._invoke_load_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1090, in _invoke_load_processors
+    data = self._invoke_processors(
+  File "C:\Users\mike\assessment-flask\venv\lib\site-packages\marshmallow\schema.py", line 1220, in _invoke_processors
+    data = processor(data, many=many, **kwargs)
+  File "C:\Users\mike\assessment-flask\schemas.py", line 30, in validate_tags
+    raise QueryParamMissingError("Tags parameter is required")
+errors.QueryParamMissingError: Tags parameter is required
+2022-02-06 21:11:12,223 INFO 127.0.0.1 - - [06/Feb/2022 21:11:12] "[31m[1mGET /api/posts HTTP/1.1[0m" 400 -
+2022-02-06 21:11:15,565 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:11:15,726 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:11:15,741 INFO 127.0.0.1 - - [06/Feb/2022 21:11:15] "[35m[1mGET /api/posts?tags=science,tech HTTP/1.1[0m" 500 -
+2022-02-06 21:11:15,789 INFO 127.0.0.1 - - [06/Feb/2022 21:11:15] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:11:15,789 INFO 127.0.0.1 - - [06/Feb/2022 21:11:15] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:11:15,795 INFO 127.0.0.1 - - [06/Feb/2022 21:11:15] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:11:15,799 INFO 127.0.0.1 - - [06/Feb/2022 21:11:15] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:11:30,339 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:11:30,492 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:11:30,507 INFO 127.0.0.1 - - [06/Feb/2022 21:11:30] "[35m[1mGET /api/posts?tags=science,tech HTTP/1.1[0m" 500 -
+2022-02-06 21:11:30,522 INFO 127.0.0.1 - - [06/Feb/2022 21:11:30] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:11:30,522 INFO 127.0.0.1 - - [06/Feb/2022 21:11:30] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:11:30,527 INFO 127.0.0.1 - - [06/Feb/2022 21:11:30] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:11:30,528 INFO 127.0.0.1 - - [06/Feb/2022 21:11:30] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:11:30,547 INFO 127.0.0.1 - - [06/Feb/2022 21:11:30] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:11:31,601 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\app.py', reloading
+2022-02-06 21:11:31,633 INFO  * Restarting with stat
+2022-02-06 21:11:33,162 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:11:33,336 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:11:33,488 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:11:33,502 INFO 127.0.0.1 - - [06/Feb/2022 21:11:33] "[35m[1mGET /api/posts?tags=science,tech HTTP/1.1[0m" 500 -
+2022-02-06 21:11:33,535 INFO 127.0.0.1 - - [06/Feb/2022 21:11:33] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:11:33,598 INFO 127.0.0.1 - - [06/Feb/2022 21:11:33] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:11:33,603 INFO 127.0.0.1 - - [06/Feb/2022 21:11:33] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:11:33,605 INFO 127.0.0.1 - - [06/Feb/2022 21:11:33] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:11:33,623 INFO 127.0.0.1 - - [06/Feb/2022 21:11:33] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:11:45,872 INFO  * Restarting with stat
+2022-02-06 21:11:47,429 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:11:47,566 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:11:47,731 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:11:47,734 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:11:47,924 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:11:47,926 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:11:47,938 INFO 127.0.0.1 - - [06/Feb/2022 21:11:47] "[35m[1mGET /api/posts?tags=science,tech HTTP/1.1[0m" 500 -
+2022-02-06 21:11:47,981 INFO 127.0.0.1 - - [06/Feb/2022 21:11:47] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:11:47,982 INFO 127.0.0.1 - - [06/Feb/2022 21:11:47] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:11:47,987 INFO 127.0.0.1 - - [06/Feb/2022 21:11:47] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:11:47,990 INFO 127.0.0.1 - - [06/Feb/2022 21:11:47] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:11:48,004 INFO 127.0.0.1 - - [06/Feb/2022 21:11:48] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:12:13,004 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:12:13,149 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:12:13,151 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:12:13,311 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:12:13,313 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:12:13,322 INFO 127.0.0.1 - - [06/Feb/2022 21:12:13] "[35m[1mGET /api/posts?tags=science,tech HTTP/1.1[0m" 500 -
+2022-02-06 21:12:13,348 INFO 127.0.0.1 - - [06/Feb/2022 21:12:13] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:12:13,348 INFO 127.0.0.1 - - [06/Feb/2022 21:12:13] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:12:13,354 INFO 127.0.0.1 - - [06/Feb/2022 21:12:13] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:12:13,357 INFO 127.0.0.1 - - [06/Feb/2022 21:12:13] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:12:13,372 INFO 127.0.0.1 - - [06/Feb/2022 21:12:13] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:12:50,792 INFO  * Restarting with stat
+2022-02-06 21:12:52,357 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:12:54,754 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:12:54,904 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:12:54,907 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:12:55,075 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:12:55,078 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:12:55,086 INFO 127.0.0.1 - - [06/Feb/2022 21:12:55] "[35m[1mGET /api/posts?tags=science,tech HTTP/1.1[0m" 500 -
+2022-02-06 21:12:55,132 INFO 127.0.0.1 - - [06/Feb/2022 21:12:55] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:12:55,132 INFO 127.0.0.1 - - [06/Feb/2022 21:12:55] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:12:55,138 INFO 127.0.0.1 - - [06/Feb/2022 21:12:55] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:12:55,139 INFO 127.0.0.1 - - [06/Feb/2022 21:12:55] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:12:55,158 INFO 127.0.0.1 - - [06/Feb/2022 21:12:55] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:13:07,437 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:13:07,581 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:13:07,584 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:13:07,735 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:13:07,737 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:13:07,743 INFO 127.0.0.1 - - [06/Feb/2022 21:13:07] "[35m[1mGET /api/posts?tags=science,tech HTTP/1.1[0m" 500 -
+2022-02-06 21:13:07,757 INFO 127.0.0.1 - - [06/Feb/2022 21:13:07] "GET /api/posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-02-06 21:13:07,757 INFO 127.0.0.1 - - [06/Feb/2022 21:13:07] "GET /api/posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-02-06 21:13:07,762 INFO 127.0.0.1 - - [06/Feb/2022 21:13:07] "GET /api/posts?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-02-06 21:13:07,764 INFO 127.0.0.1 - - [06/Feb/2022 21:13:07] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:13:07,776 INFO 127.0.0.1 - - [06/Feb/2022 21:13:07] "GET /api/posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-02-06 21:13:09,586 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\app.py', reloading
+2022-02-06 21:13:09,619 INFO  * Restarting with stat
+2022-02-06 21:13:11,187 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:13:11,425 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:13:11,579 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:13:11,583 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:13:11,736 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:13:11,738 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:13:11,739 INFO 127.0.0.1 - - [06/Feb/2022 21:13:11] "GET /api/posts?tags=science,tech HTTP/1.1" 200 -
+2022-02-06 21:15:11,140 INFO  * Restarting with stat
+2022-02-06 21:15:12,694 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-02-06 21:15:12,734 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:15:12,919 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=science HTTP/1.1" 200 None
+2022-02-06 21:15:12,922 DEBUG Starting new HTTPS connection (1): api.hatchways.io:443
+2022-02-06 21:15:13,078 DEBUG https://api.hatchways.io:443 "GET /assessment/blog/posts?tag=tech HTTP/1.1" 200 None
+2022-02-06 21:15:13,081 DEBUG Number of unique posts: 49 for tags: ['science', 'tech']
+2022-02-06 21:15:13,082 INFO 127.0.0.1 - - [06/Feb/2022 21:15:13] "GET /api/posts?tags=science,tech HTTP/1.1" 200 -
+2022-02-06 21:15:34,350 INFO  * Detected change in 'C:\\Users\\mike\\assessment-flask\\app.py', reloading
+2022-02-06 21:15:34,378 INFO  * Restarting with stat
+2022-02-06 21:15:35,913 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
